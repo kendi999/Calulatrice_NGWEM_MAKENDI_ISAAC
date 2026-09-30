@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Calulatrice_NGWEM_MAKENDI_ISAAC"
+             x:Class="Calulatrice_NGWEM_MAKENDI_ISAAC.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- ===== Couleurs de la calculatrice ===== -->
+            <Color x:Key="CalcBgColor">#F5F5F7</Color>
+            <Color x:Key="CalcSurfaceColor">#FFFFFF</Color>
+            <Color x:Key="CalcAccentColor">#5B8DEF</Color>
+            <Color x:Key="CalcAccentSecondary">#8B5CF6</Color>
+            <Color x:Key="CalcTextPrimary">#1C1C1E</Color>
+            <Color x:Key="CalcTextSecondary">#6E6E73</Color>
+
+            <!-- ===== Boutons chiffres (blanc) ===== -->
+            <Style x:Key="NumButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource CalcSurfaceColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource CalcTextPrimary}"/>
+                <Setter Property="FontSize" Value="26"/>
+                <Setter Property="CornerRadius" Value="24"/>
+                <Setter Property="Shadow">
+                    <Setter.Value>
+                        <Shadow Brush="Black" Opacity="0.08" Radius="8" Offset="0,2"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- ===== Boutons opérateurs (bleu) ===== -->
+            <Style x:Key="OpButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource CalcAccentColor}"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="26"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="CornerRadius" Value="24"/>
+                <Setter Property="Shadow">
+                    <Setter.Value>
+                        <Shadow Brush="{StaticResource CalcAccentColor}" Opacity="0.35" Radius="10" Offset="0,4"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- ===== Boutons spéciaux (C, ±, %) ===== -->
+           <Style x:Key="SpecialButton" TargetType="Button" BasedOn="{StaticResource NumButton}">
+    <Setter Property="BackgroundColor" Value="#E8E8ED"/>
+    <Setter Property="TextColor" Value="#3E6FD1"/>
+</Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

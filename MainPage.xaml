@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calulatrice_NGWEM_MAKENDI_ISAAC.MainPage"
+             BackgroundColor="#F5F5F7">
+
+    <Grid RowDefinitions="Auto,2*,5*"
+          Padding="16"
+          RowSpacing="16">
+
+        <!-- Titre discret en haut -->
+        <Label Grid.Row="0"
+               Text="CALCULTARICE NGWEM MAKENDI Isaac"
+               FontSize="14"
+               TextColor="#6E6E73"
+               HorizontalOptions="Center"
+               Margin="0,8,0,0"/>
+
+        <!-- Zone d'affichage -->
+        <VerticalStackLayout Grid.Row="1"
+                             VerticalOptions="End"
+                             Spacing="4"
+                             Padding="8,0">
+
+            <Label x:Name="HistoryLabel"
+                   Text=""
+                   FontSize="18"
+                   TextColor="#6E6E73"
+                   HorizontalTextAlignment="End"/>
+
+            <Label x:Name="DisplayLabel"
+                   Text="0"
+                   FontSize="64"
+                   FontAttributes="Bold"
+                   TextColor="#1C1C1E"
+                   SemanticProperties.HeadingLevel="Level1"
+                   HorizontalTextAlignment="End"
+                   LineBreakMode="NoWrap"/>
+
+        </VerticalStackLayout>
+
+        <!-- Grille des boutons -->
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,*,*,*"
+              RowDefinitions="*,*,*,*,*"
+              ColumnSpacing="12"
+              RowSpacing="12">
+
+            <!-- Ligne 0 : C, ±, %, ÷ -->
+            <Button Grid.Row="0" Grid.Column="0" Text="C"  Clicked="OnClearClicked"   Style="{StaticResource SpecialButton}"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="±"  Clicked="OnSignClicked"    Style="{StaticResource SpecialButton}"/>
+            <Button Grid.Row="0" Grid.Column="2" Text="%"  Clicked="OnPercentClicked" Style="{StaticResource SpecialButton}"/>
+            <Button Grid.Row="0" Grid.Column="3" Text="÷"  Clicked="OnOperatorClicked" Style="{StaticResource OpButton}"/>
+
+            <!-- Ligne 1 : 7, 8, 9, × -->
+            <Button Grid.Row="1" Grid.Column="0" Text="7" Clicked="OnDigitClicked"    Style="{StaticResource NumButton}"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="8" Clicked="OnDigitClicked"    Style="{StaticResource NumButton}"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="9" Clicked="OnDigitClicked"    Style="{StaticResource NumButton}"/>
+            <Button Grid.Row="1" Grid.Column="3" Text="×" Clicked="OnOperatorClicked" Style="{StaticResource OpButton}"/>
+
+            <!-- Ligne 2 : 4, 5, 6, - -->
+            <Button Grid.Row="2" Grid.Column="0" Text="4" Clicked="OnDigitClicked"    Style="{StaticResource NumButton}"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="5" Clicked="OnDigitClicked"    Style="{StaticResource NumButton}"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="6" Clicked="OnDigitClicked"    Style="{StaticResource NumButton}"/>
+            <Button Grid.Row="2" Grid.Column="3" Text="-" Clicked="OnOperatorClicked" Style="{StaticResource OpButton}"/>
+
+            <!-- Ligne 3 : 1, 2, 3, + -->
+            <Button Grid.Row="3" Grid.Column="0" Text="1" Clicked="OnDigitClicked"    Style="{StaticResource NumButton}"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="2" Clicked="OnDigitClicked"    Style="{StaticResource NumButton}"/>
+            <Button Grid.Row="3" Grid.Column="2" Text="3" Clicked="OnDigitClicked"    Style="{StaticResource NumButton}"/>
+            <Button Grid.Row="3" Grid.Column="3" Text="+" Clicked="OnOperatorClicked" Style="{StaticResource OpButton}"/>
+
+            <!-- Ligne 4 : 0 (large), ., = -->
+            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                    Text="0"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource NumButton}"/>
+
+            <Button Grid.Row="4" Grid.Column="2"
+                    Text="."
+                    Clicked="OnDecimalClicked"
+                    Style="{StaticResource NumButton}"/>
+
+            <Button Grid.Row="4" Grid.Column="3"
+                    Text="="
+                    Clicked="OnEqualsClicked"
+                    Style="{StaticResource OpButton}"/>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
